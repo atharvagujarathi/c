@@ -23,4 +23,6 @@ int main()
 
     iRet = addition(iValue1, iValue2);
     printf("The Addition of two numbers is : %d\n", iRet);
+
+    return 0;
 }
