@@ -46,11 +46,25 @@ int max(int ptr[], int iSize)
     int i = 0;
     int iMax = 0;
 
-    printf("even elements are, \n");
     for (i = 0; i < iSize; i++)
     {
+        if (iMax < ptr[i])
+        {
+            iMax = ptr[i];
+        }
     }
     printf("\n");
+
+    return iMax;
+}
+
+int reverse(int Arr[], int iSize)
+{
+    int i = 0;
+    for (i = iSize - 1; i >= 0; i--)
+    {
+        printf("%d\t", Arr[i]);
+    }
 }
 
 int main()
@@ -58,8 +72,9 @@ int main()
     int *Arr = NULL;
     int iLengh = 0;
     int iRet = 0;
+    int iRet1 = 0;
 
-    printf("Enter the number that you want to exactly put \n");
+    printf("Enter the number that you want to exactly put : \n");
     scanf("%d", &iLengh);
 
     Arr = (int *)malloc(iLengh * sizeof(int));
@@ -76,6 +91,13 @@ int main()
     printf("The addition of the array is, %d: \n", iRet);
 
     displayEven(Arr, iLengh);
+
+    iRet1 = max(Arr, iLengh);
+    printf("The Maximum element of the array is, %d: \n", iRet1);
+
+    printf("the reverse arrray is : \n");
+
+    reverse(Arr, iLengh);
 
     free(Arr);
     return 0;
